@@ -19,9 +19,9 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 为了方便广大用户，我们每日整理一批最新的 Clash 免费订阅地址与节点配置，涵盖中国大陆节点、外网高速节点、住宅 IP 节点、GitHub 免费配置等，适用于 Clash for Android：
 
 - ✅ **Clash免费订阅链接每日更新**：  
-  - `https://raw.githubusercontent.com/freefq/free/master/clash.yaml`  
-  - `https://clashnode.com/free.yaml`  
-  - `https://clashshare.github.io/clash.yaml`  
+  - `https://clashjd.github.io/`  
+  - `https://clash-for-android.github.io`  
+  - `[https://https://www.xinkonyun.cc/](https://www.xinkonyun.cc/)`  
 
 - ✅ **Clash免费节点试用推荐（含高速节点）**：  
   - 包含香港、日本、新加坡、美国等地区节点  
@@ -61,7 +61,7 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 | 🔥 星空云标准套餐 | ￥6/月 | 10节点 | 支持试用 | 支持 Netflix、ChatGPT、YouTube |
 | 🚀 飞鸟云漫画套餐 | ￥9/月 | 无限流量 | 高速日本漫画节点 | 日本地区专线，适合看动漫 |
 
-👉 立即购买：[http://154.219.96.52/](http://154.219.96.52/)
+👉 立即购买：[https://www.xinkonyun.cc/](https://www.xinkonyun.cc/)
 
 ---
 
@@ -121,8 +121,8 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 |------|------|
 | 配置文件免费 | 多个 GitHub/YAML 每日更新链接 |
 | clash配置免费节点 | 免费机场整理版，免注册直连 |
-| clash配置文件url免费 | `https://clashnode.net/config.yaml` |
-| clash免费的订阅链接 | `https://raw.githubusercontent.com/` 系列地址 |
+| clash配置文件url免费 | `https://www.xinkonyun.cc/` |
+| clash免费的订阅链接 | `[https://www.xinkonyun.cc/](https://www.xinkonyun.cc/)` 系列地址 |
 | clash免费高速节点 | 推荐试用：星空云 / 飞鸟云 |
 | clash节点每日更新 | 含中国大陆 / 香港 / 新加坡节点 |
 
@@ -149,7 +149,7 @@ Clash for Android 是目前安卓平台上最强大的代理客户端之一，�
 - 合理设置规则，避免全局拖慢网络
 
 💎 欢迎访问我们的节点服务平台：
-👉 [星空云：节点试用与购买](http://154.219.96.52/)
+👉 [星空云：节点试用与购买](https://www.xinkonyun.cc/)
 
 ---
 
