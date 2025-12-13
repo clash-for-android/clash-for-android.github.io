@@ -61,7 +61,7 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 | 🔥 星空云标准套餐 | ￥6/月 | 10节点 | 支持试用 | 支持 Netflix、ChatGPT、YouTube |
 | 🚀 飞鸟云漫画套餐 | ￥9/月 | 无限流量 | 高速日本漫画节点 | 日本地区专线，适合看动漫 |
 
-👉 立即购买：[https://www.xinkonyun.cc/](https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u)
+👉 立即购买：[https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u/](https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u)
 
 ---
 
@@ -121,8 +121,8 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 |------|------|
 | 配置文件免费 | 多个 GitHub/YAML 每日更新链接 |
 | clash配置免费节点 | 免费机场整理版，免注册直连 |
-| clash配置文件url免费 | `https://www.xinkonyun.cc/` |
-| clash免费的订阅链接 | `[https://www.xinkonyun.cc/](https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u)` 系列地址 |
+| clash配置文件url免费 | `https://www.smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u/` |
+| clash免费的订阅链接 | `[https://www.smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u/](https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u)` 系列地址 |
 | clash免费高速节点 | 推荐试用：星空云 / 飞鸟云 |
 | clash节点每日更新 | 含中国大陆 / 香港 / 新加坡节点 |
 
