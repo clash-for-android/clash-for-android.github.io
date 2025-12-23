@@ -21,7 +21,7 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 - ✅ **Clash免费订阅链接每日更新**：  
   - `https://clashjd.github.io/`  
   - `https://clash-for-android.github.io`  
-  - `[https://https://www.xinkonyun.cc/](https://www.xinkonyun.cc/)`  
+  - `[https://https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk/](smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk)`  
 
 - ✅ **Clash免费节点试用推荐（含高速节点）**：  
   - 包含香港、日本、新加坡、美国等地区节点  
@@ -121,8 +121,8 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 |------|------|
 | 配置文件免费 | 多个 GitHub/YAML 每日更新链接 |
 | clash配置免费节点 | 免费机场整理版，免注册直连 |
-| clash配置文件url免费 | `https://www.smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u/` |
-| clash免费的订阅链接 | `[https://www.smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u/](https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=lE0aJA2u)` 系列地址 |
+| clash配置文件url免费 | `https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk/` |
+| clash免费的订阅链接 | `[https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk/](https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk)` 系列地址 |
 | clash免费高速节点 | 推荐试用：星空云 / 飞鸟云 |
 | clash节点每日更新 | 含中国大陆 / 香港 / 新加坡节点 |
 
