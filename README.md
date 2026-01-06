@@ -21,7 +21,7 @@ Clash for Android 是一款基于 Clash 内核的安卓平台代理客户端，�
 - ✅ **Clash免费订阅链接每日更新**：  
   - `https://clashjd.github.io/`  
   - `https://clash-for-android.github.io`  
-  - `[https://https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk/](smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk)`  
+  - `[https://https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk/](https://smallrocket-web002.xn--1kv99f.com/home/#/login?code=EkHd5Edk)`  
 
 - ✅ **Clash免费节点试用推荐（含高速节点）**：  
   - 包含香港、日本、新加坡、美国等地区节点  
