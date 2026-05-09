@@ -40,7 +40,26 @@ layout: base
       {% endif %}
 
       <div class="blog-post">
+        <p class="disclaimer" style="font-size: 0.9em; color: #888; border-left: 3px solid #f0ad4e; padding-left: 10px; margin-bottom: 20px;"><strong>免责声明：</strong>本站所有内容仅供技术交流和学习使用，请遵守当地法律法规。对于任何非法使用本站内容造成的后果，本站不承担任何责任。</p>
         {{ content }}
+
+        {% assign max_related_posts = 5 %}
+        {% assign related_posts_count = 0 %}
+        {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | sort: "date", "last" %}
+
+        {% if page.tags.size > 0 %}
+          <h3>相关文章</h3>
+          <ul class="related-posts-list">
+            {% for tag in page.tags %}
+              {% for post in related_posts %}
+                {% if post.tags contains tag and related_posts_count < max_related_posts %}
+                  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                  {% assign related_posts_count = related_posts_count | plus: 1 %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        {% endif %}
       </div>
 
       {% if page.tags.size > 0 %}

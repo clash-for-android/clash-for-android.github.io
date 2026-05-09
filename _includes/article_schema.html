@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | strip_html | xml_escape }}",
+  "description": "{{ page.description | default: page.subtitle | default: page.excerpt | strip_html | xml_escape }}",
+  "image": "{% if page.cover-img %}{{ page.cover-img | absolute_url }}{% elsif page.thumbnail-img %}{{ page.thumbnail-img | absolute_url }}{% else %}{{ site.avatar | absolute_url }}{% endif %}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last-updated | default: page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: site.author | strip_html | xml_escape }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title | strip_html | xml_escape }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.avatar | absolute_url }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "keywords": "{{ page.keywords | default: site.keywords | join: ", " | xml_escape }}"
+}
+</script>
