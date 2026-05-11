@@ -2,106 +2,110 @@
 layout: base
 ---
 
-{% include header.html type="post" %}
+<header class="header-section post-header" style="background: var(--primary-gradient); color: white; padding: 60px 0; text-align: center;">
+  <div class="container-md">
+    <h1>{{ page.title | strip_html }}</h1>
+    {% if page.subtitle %}
+      <h2 class="post-subheading" style="opacity: 0.9; font-weight: 400;">{{ page.subtitle | strip_html }}</h2>
+    {% endif %}
+    <p class="post-meta" style="margin-top: 20px;">
+      {% if page.author %}By <strong>{{ page.author }}</strong> &bull; {% endif %}
+      Posted on {{ page.date | date: site.date_format }}
+    </p>
+  </div>
+</header>
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+<main class="container-md" style="margin-top: 40px;">
   <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+    <div class="col-lg-8">
+      <article class="blog-post">
+        <p class="disclaimer"><strong>免责声明：</strong>本站所有内容仅供技术交流和学习使用，请遵守当地法律法规。对于任何非法使用本站内容造成的后果，本站不承担任何责任。</p>
+        
+        <div class="post-content">
+          {{ content }}
+        </div>
 
-      {% if page.gh-repo %}
-        {% assign gh_split =  page.gh-repo | split:'/'  %}
-        {% assign gh_user =  gh_split[0]  %}
-        {% assign gh_repo =  gh_split[1]  %}
-
-        <div id="header-gh-btns">
-          {% if page.gh-badge.size > 0 %}
-            {% for badge in page.gh-badge %}
-              {% case badge %}
-                {% when 'star'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'watch'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=watch&v=2&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'fork'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=fork&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'follow'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
-              {% endcase %}
+        {% if page.tags.size > 0 %}
+          <div class="blog-tags" style="margin-top: 30px;">
+            <strong>Tags:</strong>
+            {% for tag in page.tags %}
+              <a href="{{ '/tags' | relative_url }}#{{- tag -}}" class="badge badge-light" style="font-size: 0.9em; padding: 5px 10px; margin-right: 5px; border: 1px solid #ddd;">{{- tag -}}</a>
             {% endfor %}
-          {% endif %}
-        </div>
-      {% endif %}
+          </div>
+        {% endif %}
 
-      {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
+        <hr style="margin: 40px 0;">
 
-      <div class="blog-post">
-        <p class="disclaimer" style="font-size: 0.9em; color: #888; border-left: 3px solid #f0ad4e; padding-left: 10px; margin-bottom: 20px;"><strong>免责声明：</strong>本站所有内容仅供技术交流和学习使用，请遵守当地法律法规。对于任何非法使用本站内容造成的后果，本站不承担任何责任。</p>
-        {{ content }}
-
+        <!-- Related Posts -->
         {% assign max_related_posts = 5 %}
         {% assign related_posts_count = 0 %}
         {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | sort: "date", "last" %}
 
         {% if page.tags.size > 0 %}
-          <h3>相关文章</h3>
-          <ul class="related-posts-list">
+          <h3>相关文章推荐</h3>
+          <ul class="related-posts-list" style="padding-left: 20px;">
             {% for tag in page.tags %}
               {% for post in related_posts %}
                 {% if post.tags contains tag and related_posts_count < max_related_posts %}
-                  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                  <li style="margin-bottom: 10px;"><a href="{{ post.url | relative_url }}" style="font-weight: 500;">{{ post.title }}</a></li>
                   {% assign related_posts_count = related_posts_count | plus: 1 %}
                 {% endif %}
               {% endfor %}
             {% endfor %}
           </ul>
         {% endif %}
-      </div>
 
-      {% if page.tags.size > 0 %}
-        <div class="blog-tags">
-          <span>Tags:</span>
-          {% for tag in page.tags %}
-            <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% if page.social-share %}
-        {% include social-share.html %}
-      {% endif %}
-
-      <ul class="pagination blog-pager">
-        {% if page.previous.url %}
-        <li class="page-item previous">
-          <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title | strip_html | xml_escape}}">
-            <i class="fas fa-arrow-left" alt="Previous Post"></i>
-            <span class="d-none d-sm-inline-block">Previous Post</span>
-          </a>
-        </li>
+        {% if page.social-share %}
+          {% include social-share.html %}
         {% endif %}
-        {% if page.next.url %}
-        <li class="page-item next">
-          <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title | strip_html | xml_escape}}">
-            <span class="d-none d-sm-inline-block">Next Post</span>
-            <i class="fas fa-arrow-right" alt="Next Post"></i>
+
+        <!-- Pager -->
+        <ul class="pagination blog-pager" style="justify-content: space-between; margin-top: 40px;">
+          {% if page.previous.url %}
+          <li class="page-item previous">
+            <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title | strip_html | xml_escape}}">
+              <i class="fas fa-arrow-left"></i> 上一篇
+            </a>
+          </li>
+          {% endif %}
+          {% if page.next.url %}
+          <li class="page-item next">
+            <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title | strip_html | xml_escape}}">
+              下一篇 <i class="fas fa-arrow-right"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+
+        {% include comments.html %}
+      </article>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <aside class="sidebar">
+        <h4>快速导航</h4>
+        <ul class="list-unstyled">
+          <li><a href="/">返回首页</a></li>
+          <li><a href="/aboutme">Clash 详细教程</a></li>
+        </ul>
+        <hr>
+        <div class="ad-box text-center">
+          <a href="https://yawtt.net/register?code=PCC6A3bC">
+            <img src="/img/2025091511003119.png" alt="推荐机场" class="img-fluid rounded">
+            <p class="mt-2 text-danger"><strong>点击获取免费试用节点</strong></p>
           </a>
-        </li>
-        {% endif %}
-      </ul>
-      {% include comments.html %}
+        </div>
+        <hr>
+        <h4>热门文章</h4>
+        <ul class="list-unstyled">
+          {% for post in site.posts limit:5 %}
+            <li style="margin-bottom: 10px; font-size: 0.9em;">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </aside>
     </div>
   </div>
 </main>

@@ -1,32 +1,122 @@
 ---
-layout: home
+layout: base
 title: Clash for Android/Windows/Meta 官方下载、节点推荐与免费机场订阅教程
 keywords: "Clash for Android, Clash for Windows, Clash Meta, Clash Verge, Clash免费节点, 免费机场节点, 节点推荐, Clash代理节点免费, Clash Verge节点购买, 科学上网, 翻墙教程"
 description: "Clash for Android、Clash for Windows、Clash Meta、Clash Verge 官方下载、安装与配置教程。提供最新免费机场节点、高速稳定节点推荐、Clash订阅链接及常见问题解决方案，助您轻松科学上网。"
 ---
 
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <h1>Clash 一站式科学上网解决方案</h1>
+    <p class="lead">提供最全面、最及时的 Clash for Android/Windows/Meta 客户端下载、安装、配置教程以及高质量节点推荐。</p>
+    <div class="hero-btns">
+      <a href="#download" class="btn btn-light btn-lg">立即下载</a>
+      <a href="#nodes" class="btn btn-outline-light btn-lg">节点推荐</a>
+    </div>
+  </div>
+</section>
 
-<div class="post-entry">
-  <h2>Clash for Android/Windows/Meta：一站式科学上网解决方案</h2>
-  <p>欢迎来到 Clash for Android/Windows/Meta 官方资源站！我们致力于为您提供最全面、最及时、最稳定的 Clash 客户端下载、安装、配置教程以及高质量的免费节点和付费机场推荐。无论您是 Clash for Android 用户，还是寻求 Clash for Windows 或 Clash Meta 的高效代理方案，这里都能找到您所需的一切。</p>
+<div class="container-md">
+  <!-- Feature Grid -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <i class="fas fa-download"></i>
+      <h3>官方下载</h3>
+      <p>提供 Clash for Android、Windows、Meta、Verge 等主流客户端最新版本，安全可靠。</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-book"></i>
+      <h3>使用教程</h3>
+      <p>从入门到精通，图文详解订阅配置、节点导入及高级分流规则设置。</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-server"></i>
+      <h3>免费节点</h3>
+      <p>每日更新全球高质量免费机场节点，覆盖多国线路，助您免费畅游。</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-rocket"></i>
+      <h3>节点推荐</h3>
+      <p>精选高性价比付费机场，提供 Clash Verge 节点购买指南，追求极致稳定。</p>
+    </div>
+  </div>
 
-  <h3>为什么选择 Clash？</h3>
-  <p>Clash 是一款功能强大的多平台代理客户端，支持 Shadowsocks (SS)、ShadowsocksR (SSR)、V2Ray、Trojan 等多种代理协议。其核心优势在于灵活的规则引擎，可以实现流量分流、智能路由，确保您在享受高速网络的同时，兼顾隐私与安全。对于需要稳定科学上网的用户而言，Clash 无疑是首选工具。</p>
+  <div class="row">
+    <!-- Main Content Area -->
+    <div class="col-lg-8">
+      <h2 id="latest-updates">最新文章与节点更新</h2>
+      <hr>
+      
+      {% assign posts = paginator.posts | default: site.posts %}
+      <ul class="posts-list list-unstyled" role="list">
+        {% for post in posts %}
+        <li class="post-preview">
+          <article>
+            <a href="{{ post.url | absolute_url }}">
+              <h2 class="post-title">{{ post.title | strip_html }}</h2>
+              {% if post.subtitle %}
+                <h3 class="post-subtitle">{{ post.subtitle | strip_html }}</h3>
+              {% endif %}
+            </a>
+            <p class="post-meta">
+              Posted on {{ post.date | date: site.date_format }}
+            </p>
+            <div class="post-entry">
+              {{ post.excerpt | strip_html | truncatewords: 30 }}
+              <a href="{{ post.url | absolute_url }}" class="post-read-more">[阅读全文]</a>
+            </div>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
 
-  <h3>我们的服务内容：</h3>
-  <ul>
-    <li><strong>Clash 客户端下载：</strong> 提供 Clash for Android、Clash for Windows、Clash Meta、Clash Verge 等主流客户端的最新版本下载链接，确保您获取到安全可靠的安装包。</li>
-    <li><strong>详细使用教程：</strong> 从客户端安装、Clash 订阅配置、节点导入到高级功能设置，我们提供图文并茂的详细教程，即使是新手也能轻松上手。</li>
-    <li><strong>免费机场节点：</strong> 每日更新高质量免费机场节点，覆盖全球多个国家和地区，助您免费畅游互联网。我们深知免费节点的不稳定性，因此会持续筛选和更新，力求提供最佳体验。</li>
-    <li><strong>节点推荐与购买：</strong> 针对追求极致速度和稳定性的用户，我们精选并推荐优质付费机场服务，提供 Clash Verge 节点购买指南，确保您获得高性价比的科学上网方案。</li>
-    <li><strong>Clash 代理节点免费：</strong> 除了免费机场，我们还会分享各类 Clash 代理节点免费资源，让您的网络连接更加灵活多样。</li>
-    <li><strong>常见问题解答：</strong> 汇总 Clash 使用过程中可能遇到的各种问题，并提供专业的解决方案，让您无忧科学上网。</li>
-  </ul>
+      <!-- Pagination -->
+      {% if paginator.total_pages > 1 %}
+      <ul class="pagination main-pager">
+        {% if paginator.previous_page %}
+        <li class="page-item previous">
+          <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
+            <i class="fas fa-arrow-left"></i> Newer
+          </a>
+        </li>
+        {% endif %}
+        {% if paginator.next_page %}
+        <li class="page-item next">
+          <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
+            Older <i class="fas fa-arrow-right"></i>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
 
-  <h3>立即开始您的科学上网之旅！</h3>
-  <p>无论您是想下载 Clash for Android，寻找 Clash for Windows 的最佳配置，还是需要免费机场节点，本站都是您的理想选择。我们承诺持续更新内容，提供最新、最有效的科学上网资源。探索无限可能，从这里开始！</p>
+    <!-- Sidebar Area -->
+    <div class="col-lg-4">
+      <aside class="sidebar">
+        <h4>快速导航</h4>
+        <ul class="list-unstyled">
+          <li><a href="/aboutme">Clash 详细教程</a></li>
+          <li><a href="#download">客户端下载汇总</a></li>
+          <li><a href="#nodes">免费订阅链接</a></li>
+        </ul>
+        <hr>
+        <h4>热门关键词</h4>
+        <div class="tag-cloud">
+          <span class="badge badge-primary">clashmeta</span>
+          <span class="badge badge-info">clash for android</span>
+          <span class="badge badge-success">节点推荐</span>
+          <span class="badge badge-warning">免费机场</span>
+        </div>
+        <hr>
+        <div class="ad-box text-center">
+          <a href="https://yawtt.net/register?code=PCC6A3bC">
+            <img src="/img/2025091511003119.png" alt="推荐机场" class="img-fluid rounded">
+            <p class="mt-2 text-danger"><strong>点击获取免费试用节点</strong></p>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
 </div>
-
-<hr>
-
-<h2>最新文章与节点更新</h2>

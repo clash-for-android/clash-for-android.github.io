@@ -1,0 +1,279 @@
+/* Modern Redesign Custom CSS */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #008AFF 0%, #00C6FF 100%);
+  --secondary-bg: #f8f9fa;
+  --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  --hero-text-color: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+  background: var(--primary-gradient);
+  padding: 100px 0 80px;
+  color: var(--hero-text-color);
+  text-align: center;
+  margin-top: -20px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-section .lead {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-light {
+  background: white;
+  color: #008AFF;
+}
+
+.btn-light:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.btn-outline-light {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+/* Hero Buttons Container */
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Feature Cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: #008AFF;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 3px;
+  border-radius: 20px;
+  font-size: 0.85em;
+}
+
+/* Tag Cloud */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Ad Box */
+.ad-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+/* Article List Refinement */
+.post-preview {
+  background: #fff;
+  margin-bottom: 25px;
+  padding: 25px !important;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: box-shadow 0.3s ease;
+}
+
+.post-preview:hover {
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+.post-title {
+  color: #333 !important;
+  margin-top: 0 !important;
+}
+
+/* Article Page Enhancements */
+.blog-post {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  line-height: 1.8;
+}
+
+.disclaimer {
+  background: #fff9db;
+  border-left: 5px solid #fab005 !important;
+  padding: 15px !important;
+  border-radius: 4px;
+}
+
+/* Post Content Styling */
+.post-content h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.post-content h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.post-content p {
+  line-height: 1.8;
+  color: #555;
+}
+
+.post-content ul, .post-content ol {
+  margin: 20px 0;
+  padding-left: 30px;
+}
+
+.post-content li {
+  margin-bottom: 10px;
+}
+
+.post-content code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.post-content pre {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Sidebar Placeholder */
+.sidebar {
+  padding: 20px;
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.sidebar ul li {
+  margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+  color: #008AFF;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Post Header */
+.post-header {
+  margin-top: -20px;
+}
+
+.post-header h1 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.post-header .post-subheading {
+  color: rgba(255,255,255,0.9);
+}
+
+.post-header .post-meta {
+  color: rgba(255,255,255,0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+  
+  .hero-btns {
+    flex-direction: column;
+  }
+  
+  .blog-post {
+    padding: 20px;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    margin-top: 30px;
+    position: static;
+  }
+  
+  .post-header h1 {
+    font-size: 1.5rem;
+  }
+}
