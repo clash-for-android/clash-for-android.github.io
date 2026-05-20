@@ -63,7 +63,11 @@ description: "Clash for Android、Clash for Windows、Clash Meta、Clash Verge �
               Posted on {{ post.date | date: site.date_format }}
             </p>
             <div class="post-entry">
-              {{ post.excerpt | strip_html | truncatewords: 30 }}
+              {% if post.excerpt %}
+                {{ post.excerpt | strip_html | truncatewords: 50 }}
+              {% else %}
+                {{ post.content | strip_html | truncatewords: 50 }}
+              {% endif %}
               <a href="{{ post.url | absolute_url }}" class="post-read-more">[阅读全文]</a>
             </div>
           </article>
