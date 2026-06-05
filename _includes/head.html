@@ -162,28 +162,185 @@
   {% else %}
     {% include schema_org.html %}
   {% endif %}
-    <div id="popupOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 999;">
-      <div style="background: #fff; padding: 20px 30px; border-radius: 12px; max-width: 100%; width: 370px; text-align: center; position: relative; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);">
-   <a href="https://ml.yfqz1.net/register?code=PCC6A3bC"> <p style="margin: 0 0 10px; font-size: 26px; color: red;">免费试用机场</p> <a href="http://shop.xinkonyun.cc/"><p style="margin: 0 0 10px; font-size: 26px; color: #00d9ff;">购买Shadowrocket独享账号/海外其他账号</p> </a>
- <button onclick="closePopup()" style="
-        position: absolute;
-        top: -15px;
-        right: -15px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #f44336;
-        border: none;
-        font-size: 24px;
-        font-weight: bold;
-        color: #fff;
-        cursor: pointer;
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
-        transition: background 0.3s;
-      " onmouseover="this.style.background='#d32f2f'" onmouseout="this.style.background='#f44336'">×</button>     
-     
-      <img src="https://clash-for-android.github.io/img/2025091511003119.png" alt="机场地址" style="width: 300px; height: 290px; display: block; margin: 0 auto 15px;" /></a>
-    </div>
+    <!-- 弹窗样式与脚本开始 -->
+<style>
+  #popupOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 10px;
+    box-sizing: border-box;
+  }
   
+  #popupOverlay.show {
+    display: flex;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    max-width: 100%;
+    width: 370px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .popup-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    z-index: 10;
+  }
+  
+  .popup-close-btn:hover {
+    background: #f44336;
+    color: #fff;
+  }
+  
+  .popup-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .popup-title {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4d4f;
+    word-wrap: break-word;
+  }
+  
+  .popup-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+  }
+
+  .popup-shop-btn {
+    display: inline-block;
+    width: 100%;
+    background: #e11d48;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .popup-shop-btn:hover {
+    background: #be123c;
+  }
+  
+  /* 移动端适配 */
+  @media (max-width: 768px) {
+    .popup-content {
+      width: 95%;
+      max-width: 320px;
+      padding: 15px 20px;
+    }
+    
+    .popup-title {
+      font-size: 20px;
+    }
+    
+    .popup-close-btn {
+      width: 28px;
+      height: 28px;
+      font-size: 18px;
+    }
+  }
+</style>
+
+<!-- 弹窗 HTML 结构 -->
+<div id="popupOverlay">
+  <div class="popup-content">
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <!-- 推荐链接 -->
+      <a href="https://ml.yfqz1.net/register?code=PCC6A3bC" target="_blank" class="popup-link">
+        <p class="popup-title">Clash 机场推荐</p>
+        <img src="https://free.picui.cn/free/2026/06/05/6a229370bf0c1.png" alt="机场地址" class="popup-image">
+      </a>
+      
+      <!-- 分割线 -->
+      <div style="border-top: 1px solid #f3f4f6; padding-top: 1rem;">
+        <a href="http://shop.xinkonyun.cc/" target="_blank" class="popup-shop-btn">
+          🛒 购买 Shadowrocket 独享账号/海外其他账号
+        </a>
+      </div>
+    </div>
+    
+    <!-- 关闭按钮 -->
+    <button class="popup-close-btn" id="popupCloseBtn" aria-label="关闭">&times;</button>
+  </div>
 </div>
+
+<!-- 弹窗控制脚本 -->
+<script>
+  (function() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupCloseBtn = document.getElementById('popupCloseBtn');
+    
+    // 页面加载完成后显示弹窗
+    window.addEventListener('DOMContentLoaded', function() {
+      // 延迟 500ms 显示，效果更自然
+      setTimeout(() => {
+        popupOverlay.classList.add('show');
+      }, 500);
+    });
+    
+    // 关闭按钮点击事件
+    popupCloseBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      popupOverlay.classList.remove('show');
+    });
+    
+    // 点击遮罩层不关闭（强制引导），如需点击遮罩关闭可取消下面注释
+    /*
+    popupOverlay.addEventListener('click', function(e) {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('show');
+      }
+    });
+    */
+  })();
+</script>
+<!-- 弹窗样式与脚本结束 -->
+
 </head>
